@@ -1,4 +1,4 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Xenalyn Parish */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
@@ -39,27 +39,327 @@ body.dark-mode {
 }
 
 /* ///ADD/// Skip Link Styles */
+#skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
 
 /* ///ADD/// Navigation Styles */
+header {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+}
+nav h2{
+  display:none;
+}
+nav {
+  color: var(--watchdog-white);
+}
+.menu-button {
+  background-color: var(--news-flash);
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.menu {
+  display: none;
+
+}
+
+#menu-toggle:checked ~ .menu {
+  display: block;
+}
+
+.menu li a {
+  text-decoration: none;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  display: block;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 4px;
+  
+}
+.menu li a:hover, footer a:hover{
+  background-color: var(--blue-bulletin);
+  border: 1px solid var(--news-flash);
+  transition:var(--transition);
+}
+#news section:hover, #articles section:hover{
+  transform:scale(1.02);
+  transition:var(--transition)
+}
+.menu li {
+  padding: 0.25rem;
+}
+
 
 /* ///ADD/// Global Layout Styles */
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+main {
+  max-width: 1200px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+section {
+  display: grid;
+}
+
+h2 section {
+  background-color: var(--news-flash);
+}
+
 
 /* ///ADD/// Global Text Styles */
+p, label {
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+  margin: 1rem 0 .5rem 0;
+}
+h3 {
+  font-size: 1.5rem;
+  margin: .25rem 0;
+}
+.tagline {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+#welcome .tagline {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+#investigation, #suppression {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 16px;
+  margin: 0.5rem;
+}
+#investigation p, #suppression p{
+  padding-bottom: 8px;
+}
+#articles section {
+  border: 1.5px solid var(--story-subtitle);
+  margin: 4px;
+  padding: 8px;
+  box-shadow: var(--shadow);
+}
+#articles section h3 {
+  border-bottom: 1px solid var(--story-subtitle);
+}
+#subscription form {
+  background-color: var(--news-flash);
+  padding: 0 8px;
+  margin: 8px;
+  color: var(--watchdog-white);
+}
+.personalInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+}
+label {
+  display: block;
+  padding: 4px 0;
+}
 
+fieldset {
+  border: 2px solid var(--blue-bulletin);
+  accent-color: var(--blue-bulletin);
+}
+input[type="text"], input[type="tel"] {
+  padding: 0.5rem;
+}
+.fieldset {
+  display: flex;
+  padding: 2px;
+}
+#submit {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+  margin: 8px 0;
+  padding: 8px 0;
+  width: 100%;
+}
+footer {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--watchdog-white);
+  background-color: var(--news-flash);
+  padding: 8px;
+  margin: 4px 0;
+  width: fit-content;
+  display: flex;
+
+}
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+footer p {
+  padding: 8px 0;
+  text-align: center;
+}
+video{
+  width:100%;
+  height:auto;
+}
 
 /* ///ADD/// medium styles 620px */
+@media screen and (min-width: 620px) {
+  /* Navigation becomes horizontal on medium screens */
+  .menu-button {
+    display: none;
+  }
 
+  .menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu li {
+    margin: 0 0.5rem;
+  }
+
+  .menu li a {
+    margin-bottom: 0;
+  }
+  #news{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #news h2{
+    grid-column: 1/-1;
+  }
+  #articles{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #articles h2{
+    grid-column: 1/-1;
+  }
+  form{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  fieldset{
+    grid-column: 1/-1;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #submit{
+    grid-column: 1/-1;
+  }
+  .personalInfo{
+    margin:1px;
+  }
+}
 
 /* ///ADD/// large styles 920px */
-
+@media screen and (min-width:920px) {
+  #articles{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  fieldset{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 
 /* ///ADD/// x-large styles 1024px */
+@media screen and (max-width: 1024px) and (min-width: 921px) {
+    #section1 h3{
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid var(--watchdog-white);
+    }
 
+    #section1 p{
+        font-size: 0.8em;
+    }
+
+    #section2 h3{
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px solid var(--watchdog-white);
+    }
+
+    #section2 p{
+        font-size: 0.8em;
+    }
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
-
+@media (prefers-color-scheme:light) {
+  body:not(.dark-mode):not(.light-mode){
+    background-color: var(--watchdog-white);
+    color:var(--truth-text);
+  }
+}
+@media (prefers-reduced-motion){
+  .menu li a:hover, footer a:hover{
+    transition:none;
+  }
+  #news section:hover, #articles section:hover{
+    transform:none;
+    transition:none;
+  }
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
+  .menu {
+    display: none;
+  }
 
+  .mobile-nav:has(#menu-toggle:checked) .menu {
+    display: block;
+  }
+
+  @media screen and (min-width: 620px) {
+    .menu {
+      display: flex;
+    }
+  }
 }
